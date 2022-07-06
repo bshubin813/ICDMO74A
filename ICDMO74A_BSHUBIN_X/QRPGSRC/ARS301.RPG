@@ -1,0 +1,21 @@
+000100000711     H********************************************************************
+000200181017     H**   ARS301-B                                                      *
+000300211202     H************************
+000400001025     FMASTERL1IF  E           K        DISK
+000500000711     F            ACTGLP                            KRENAMERPGID2
+000600000711     C           *ENTRY    PLIST
+000700000711     C                     PARM           CHECK   10
+000800001023     C           CHECK     IFGT 0
+000900000711     C                     ENDIF
+001000001025     C                     READ MASTERL1                 90
+001100001024     C           *IN90     IFNE '5'
+001200000711     C                     GOTO ENDFIL
+001300000711     C                     ENDIF
+001400001025     C                     READ MASTERL1                 90
+001500000905     C           CHECK     IFLT 0
+001600000711     C                     GOTO ENDFIL
+001700000711     C                     ENDIF
+001800000711     C           ENDFIL    TAG
+001900000711      *                    SETON                     LR
+002000000711     C                     RETRN
+002100000711      *
